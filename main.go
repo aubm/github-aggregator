@@ -9,7 +9,8 @@ import (
 )
 
 func main() {
-	reposManager := github.ReposManager{}
+	dir := "/Users/aurelienbaumann/Desktop/clones"
+	reposManager := github.ReposManager{Dir: dir}
 	handlers := api.ReposHandlers{Manager: reposManager}
 
 	http.HandleFunc("/", handlers.CloneRepos)
